@@ -1,0 +1,7 @@
+{
+  "name": "mobilejuegodepalabra",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
