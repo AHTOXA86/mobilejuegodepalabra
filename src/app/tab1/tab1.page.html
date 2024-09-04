@@ -12,6 +12,9 @@
       <ion-title size="large">Juego</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-sign-in></app-sign-in>
+  @if (isGame) {
+  <app-game></app-game>
+  } @else {
+  <app-sign-in (changeStateOfGame)="setGameState($event)"></app-sign-in>
+  }
 </ion-content>

@@ -1,12 +1,11 @@
 <ion-grid>
   <ion-row class="ion-align-items-center ion-justify-content-center">
     <ion-col>
-      <ion-input name="name" placeholder="Nombre de jugador"></ion-input>
-      
+      <ion-input type="text" [(ngModel)]="playerName" placeholder="Nombre de jugador"></ion-input>
     </ion-col>
   </ion-row>
   <ion-row class="ion-align-items-center ion-justify-content-center">
-    <ion-col> 
+    <ion-col>
       <ion-button (click)="startGame()">Jugar</ion-button>
     </ion-col>
   </ion-row>
