@@ -1,0 +1,6 @@
+<form [formGroup]="userWordForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+        <ion-label position="fixed">Proba</ion-label>
+        <ion-input type="text" maxlength="5" minlength="5" name="guess" id="guess" [formControlName]="'guess'" pattern="[A-Za-z]{5}"></ion-input>
+    </ion-item>
+</form>

@@ -62,6 +62,9 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
+              "sourceMapPathOverrides": {
+        "webpack:/*": "${workspaceFolder}/*"
+      },
               "namedChunks": true
             },
             "ci": {

@@ -10,7 +10,7 @@ import {IonButton, IonInput, IonGrid, IonRow, IonCol } from '@ionic/angular/stan
   standalone: true,
 })
 export class SignInComponent  implements OnInit {
-  @Output('playerName') changeStateOfGame = new EventEmitter<string>();
+  @Output('changeStateOfGame') changeStateOfGame = new EventEmitter<string>();
 
   playerName: string = '';
   constructor() { }

@@ -1,3 +1,12 @@
-<p>
-  game works!
-</p>
+<ion-grid cols="5" rowHeight="50px">
+  @for (palabra of entered.slice(-5); track palabra) {
+    <ion-row>
+    @for (letter of palabra; track letter) {
+      <ion-col
+        [style.background]="getColor(letter, $index)">{{letter}}</ion-col>
+    }
+  </ion-row>
+  }
+</ion-grid>
+
+<app-user-word-form (dataEmitter)="addPalabra($event)"></app-user-word-form>
