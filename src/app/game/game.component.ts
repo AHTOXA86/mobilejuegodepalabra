@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {IonButton, IonAlert, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone'
 import { UserWordFormComponent } from '../user-word-form/user-word-form.component';
 import { WordinputComponent } from '../wordinput/wordinput.component';
+import { Storage } from '@ionic/storage-angular';
+import { Ranges, Ranks } from "../interfaces"
+
 
 @Component({
   selector: 'app-game',
@@ -12,7 +15,7 @@ import { WordinputComponent } from '../wordinput/wordinput.component';
 })
 export class GameComponent  implements OnInit {
 
-  constructor() { }
+  constructor(private storage: Storage) { }
 
   ngOnInit() {}
 
@@ -42,9 +45,17 @@ export class GameComponent  implements OnInit {
   addPalabra(word: string) {
     console.log(word); this.entered.push(word);
     if (word.toLowerCase() === this.secretWord.toLowerCase()) {
+      this.saveWinner()
       this.isAlertOpen = true;
     }
   };
+
+  // Save the winner name in ranks
+  async saveWinner() {
+
+    let ranks: Ranges = await this.storage.get("ranks")
+    ranks.push({name: "temp", word: this.secretWord,points: 10,date: Date.toString()})
+  }
 
   getColor(letter: string, index: number) {
     // check if letter is correct

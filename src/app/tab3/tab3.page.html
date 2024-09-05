@@ -15,10 +15,10 @@
 
   <ion-item>
     <ion-textarea label="Lista de palabras" labelPlacement="floating" placeholder="Poner palabras"
-      [autoGrow]="true" value="mmmmm" [(ngModel)]="palabras"></ion-textarea>
+      [autoGrow]="true" [(ngModel)]="palabras" (change)="saveConfig()"></ion-textarea>
   </ion-item>
 
   <ion-item>
-    <ion-input label="Errores permitidos" type="number" [(ngModel)]="errores"></ion-input>
+    <ion-input label="Errores permitidos" type="number" [(ngModel)]="errores" (change)="saveConfig()"></ion-input>
   </ion-item>
 </ion-content>

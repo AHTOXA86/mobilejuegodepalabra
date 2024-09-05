@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { addIcons } from "ionicons";
+import { Ranges } from "../interfaces"
+import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-tab2',
@@ -13,6 +17,11 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 })
 export class Tab2Page {
 
-  constructor() {}
+  rangs: Ranges = []
+  constructor(private storage: Storage) {}
+
+  async ngOnInit() {
+    this.rangs = await this.storage['get']("rangs")
+  }
 
 }

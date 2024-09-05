@@ -20,5 +20,16 @@
       <ion-col>Ganada</ion-col>
       <ion-col>Fecha</ion-col>
     </ion-row>
+
+    @if (rangs.length) {
+      @for(rang of rangs; track rang.name) {
+      <ion-row>
+        <ion-col>{{rang.name}}</ion-col>
+        <ion-col>{{rang.word}}</ion-col>
+        <ion-col>{{rang.points}}</ion-col>
+        <ion-col>{{rang.date}}</ion-col>
+      </ion-row>
+      }
+    }
   </ion-grid>
 </ion-content>
