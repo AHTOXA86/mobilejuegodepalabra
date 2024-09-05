@@ -13,5 +13,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Config page"></app-explore-container>
+  <ion-item>
+    <ion-textarea label="Lista de palabras" labelPlacement="floating" placeholder="Poner palabras"
+      [autoGrow]="true" value="mmmmm" [(ngModel)]="palabras"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="Errores permitidos" type="number" [(ngModel)]="errores"></ion-input>
+  </ion-item>
 </ion-content>

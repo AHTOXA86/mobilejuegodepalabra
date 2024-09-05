@@ -10,3 +10,12 @@
 </ion-grid>
 
 <app-user-word-form (dataEmitter)="addPalabra($event)"></app-user-word-form>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="Eres ganador"
+  subHeader=""
+  message="Eres ganador!"
+  [buttons]="alertButtons"
+  (didDismiss)="reset()"
+></ion-alert>

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {IonButton, IonInput, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone'
+import {IonButton, IonAlert, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone'
+import { UserWordFormComponent } from '../user-word-form/user-word-form.component';
+import { WordinputComponent } from '../wordinput/wordinput.component';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
-  imports: [IonGrid, IonRow, IonCol],
+  imports: [IonGrid, IonRow, IonCol, UserWordFormComponent, WordinputComponent, IonAlert],
   standalone: true,
 })
 export class GameComponent  implements OnInit {
@@ -14,17 +16,20 @@ export class GameComponent  implements OnInit {
 
   ngOnInit() {}
 
-  palabras: string[] = [
-    "Macho", "Macro", "Madre", "Mafia", "Magia", "Magma", "Magno",
-    "Magro", "Malla", "Malos", "Malva", "Mambo", "Mamut", "Manco",
-    "Mande", "Manga", "Mango", "Mansa", "Manto", "Mapas",
-    "Maqui", "Marca", "Marco", "Marea", "Mares", "Marte", "Matan",
-    "Matas", "Matiz", "Maula", "Mayas", "Mayor", "Mecha", "Medir",
-    "Melga", "Menor"
-  ];
+  palabras: string[] = ["mmmmm"]
+  //   "Macho", "Macro", "Madre", "Mafia", "Magia", "Magma", "Magno",
+  //   "Magro", "Malla", "Malos", "Malva", "Mambo", "Mamut", "Manco",
+  //   "Mande", "Manga", "Mango", "Mansa", "Manto", "Mapas",
+  //   "Maqui", "Marca", "Marco", "Marea", "Mares", "Marte", "Matan",
+  //   "Matas", "Matiz", "Maula", "Mayas", "Mayor", "Mecha", "Medir",
+  //   "Melga", "Menor"
+  // ];
 
 
   // readonly dialog = inject(MatDialog);
+  isAlertOpen = false;
+  alertButtons = ['Vale'];
+
   entered: string[] = [];
 
 
@@ -37,15 +42,7 @@ export class GameComponent  implements OnInit {
   addPalabra(word: string) {
     console.log(word); this.entered.push(word);
     if (word.toLowerCase() === this.secretWord.toLowerCase()) {
-
-      // const dialogRef = this.dialog.open(DialogComponent);
-
-      // dialogRef.afterClosed().subscribe(() => {
-      //   console.log('The dialog was closed');
-      //   this.reset()
-      // });
-
-
+      this.isAlertOpen = true;
     }
   };
 
