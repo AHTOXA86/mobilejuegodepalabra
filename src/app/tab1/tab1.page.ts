@@ -19,8 +19,11 @@ export class Tab1Page {
 
   setGameState($event: any) {
     this.isGame = true; 
-    console.log($event);
     this.name = $event.data;
+  }
+
+  public async ionViewWillEnter() {
+    this.isGame = false; 
   }
 
 }

@@ -27,7 +27,8 @@ export class Tab2Page {
     await this.loadRanks()
   }
 
-  async ngAfterViewInit() {
+
+  public async ionViewWillEnter() {
     await this.loadRanks()
   }
 
