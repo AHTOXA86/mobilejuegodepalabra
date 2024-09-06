@@ -1,7 +1,7 @@
 <ion-grid cols="5" rowHeight="50px">
-  @for (palabra of entered.slice(-5); track palabra) {
+  @for (palabra of entered.slice(-5); track $index) {
     <ion-row>
-    @for (letter of palabra; track letter) {
+    @for (letter of palabra; track $index) {
       <ion-col
         [style.background]="getColor(letter, $index)">{{letter}}</ion-col>
     }
@@ -13,9 +13,9 @@
 
 <ion-alert
   [isOpen]="isAlertOpen"
-  header="Eres ganador"
+  header="{{alertMessages[alertMessage]}}"
   subHeader=""
-  message="Eres ganador!"
+  message="{{alertMessages[alertMessage]}}!"
   [buttons]="alertButtons"
   (didDismiss)="reset()"
 ></ion-alert>

@@ -3,8 +3,19 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { Storage } from '@ionic/storage-angular';
 
 const initialData = [
-  {"key": "config" , "value": {"palabras": ['mmmmm'], "errores": 5}},
-  {"key": "rangs", "value":[{"name": "Anton", "word": "mmmmm", "points": 10, "date": "05/09/2024"}]}
+  {"key": "config" , "value": {
+    "palabras": [
+      "Macho", "Macro", "Madre", "Mafia", "Magia", "Magma", "Magno",
+      "Magro", "Malla", "Malos", "Malva", "Mambo", "Mamut", "Manco",
+      "Mande", "Manga", "Mango", "Mansa", "Manto", "Mapas",
+      "Maqui", "Marca", "Marco", "Marea", "Mares", "Marte", "Matan",
+      "Matas", "Matiz", "Maula", "Mayas", "Mayor", "Mecha", "Medir",
+      "Melga", "Menor"
+    ],
+     "errores": 5
+    }
+  },
+  {"key": "ranks", "value":[{"id":"e93bd79e-cff6-491c-91f3-d1a041ae0841", "name": "Anton", "word": "mmmmm", "points": 10, "date": "05/09/2024"}]}
 ]
 
 @Component({

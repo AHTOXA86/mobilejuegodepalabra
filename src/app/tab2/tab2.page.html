@@ -21,13 +21,13 @@
       <ion-col>Fecha</ion-col>
     </ion-row>
 
-    @if (rangs.length) {
-      @for(rang of rangs; track rang.name) {
+    @if (ranks.length) {
+      @for(rank of ranks; track rank.id) {
       <ion-row>
-        <ion-col>{{rang.name}}</ion-col>
-        <ion-col>{{rang.word}}</ion-col>
-        <ion-col>{{rang.points}}</ion-col>
-        <ion-col>{{rang.date}}</ion-col>
+        <ion-col>{{rank.name}}</ion-col>
+        <ion-col>{{rank.word}}</ion-col>
+        <ion-col>{{rank.points}}</ion-col>
+        <ion-col>{{rank.date}}</ion-col>
       </ion-row>
       }
     }

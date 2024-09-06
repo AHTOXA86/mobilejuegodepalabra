@@ -3,11 +3,17 @@ export interface Config {
     errores: number;
 }
 
-export interface Ranks {
+export interface Rank {
+    id: string;
     name: string;
     word: string;
     points: number;
     date: string;
 }
 
-export interface Ranges extends Array<Ranks> {}
+export interface Ranks extends Array<Rank> {}
+
+
+export interface AlertMessages {
+    [key: string]: string;
+  }

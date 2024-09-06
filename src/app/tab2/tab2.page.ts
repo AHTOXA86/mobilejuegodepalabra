@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { addIcons } from "ionicons";
-import { Ranges } from "../interfaces"
+import { Ranks } from "../interfaces"
 import { Storage } from '@ionic/storage-angular';
 
 
@@ -17,11 +17,19 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class Tab2Page {
 
-  rangs: Ranges = []
+  ranks: Ranks = []
   constructor(private storage: Storage) {}
 
-  async ngOnInit() {
-    this.rangs = await this.storage['get']("rangs")
+  async loadRanks() {
+    this.ranks = await this.storage['get']("ranks")
   }
+  async ngOnInit() {
+    await this.loadRanks()
+  }
+
+  async ngAfterViewInit() {
+    await this.loadRanks()
+  }
+
 
 }

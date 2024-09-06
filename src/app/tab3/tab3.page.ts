@@ -16,18 +16,18 @@ import { addIcons } from "ionicons";
 })
 export class Tab3Page {
   errores = 5
-  palabras = "mmmmm"
+  palabras = ""
   constructor(private storage: Storage) {}
 
   async ngOnInit() {
     const config = await this.storage['get']("config")
     console.log(config);
-    this.palabras = config.palabras
+    this.palabras = config.palabras.join('\n')
     this.errores = config.errores
     
   }
 
   saveConfig() {
-    this.storage.set("config", {"palabras": this.palabras, "errores": this.errores})
+    this.storage.set("config", {"palabras": this.palabras.split('\n'), "errores": this.errores})
   }
 }
